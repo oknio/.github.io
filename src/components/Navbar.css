@@ -1,0 +1,210 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: transparent;
+  z-index: 1000;
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+}
+
+.navbar.scrolled {
+  background: var(--color-nav-bg);
+  backdrop-filter: blur(10px);
+}
+
+.navbar.dropdown-active {
+  background: #0b0b0b !important;
+  border-bottom: 1px solid #222;
+}
+
+.navbar-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  height: 100%;
+}
+
+.nav-item {
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--color-text);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--color-text-muted);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.icon-btn {
+  background: transparent;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast);
+}
+
+.icon-btn:hover {
+  color: var(--color-text-muted);
+}
+
+.user-btn {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  padding: 0.5rem;
+  transition: var(--transition-fast);
+}
+
+.user-btn:hover {
+  border-color: white;
+}
+
+/* Mega Menu Styles */
+.mega-menu {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  background-color: #0b0b0b;
+  border-bottom: 1px solid #222;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+.mega-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mega-menu-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2rem 2.5rem;
+  overflow: visible;
+}
+
+.mega-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.mega-menu-header h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.view-all {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.view-all:hover {
+  color: #ccc;
+}
+
+.mega-menu-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 0.4rem 0; /* breathing room so scale hover isn't clipped */
+  overflow: visible;
+}
+
+.game-card {
+  flex: 0 1 260px;       /* fixed-ish size; won't stretch to fill */
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid #333;
+}
+
+.game-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 0 2px white;
+  z-index: 2;
+}
+
+.game-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.game-card-title-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.9));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.game-card:hover .game-card-title-overlay {
+  opacity: 1;
+}
+
+.game-card-title-overlay span {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+}
+

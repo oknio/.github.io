@@ -1,0 +1,159 @@
+.about-page {
+  padding-top: 120px;
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+}
+
+.about-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(
+    135deg,
+    rgba(20, 20, 35, 0.9) 0%,
+    rgba(30, 25, 50, 0.8) 100%
+  );
+}
+
+.about-container {
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.about-image-wrapper:hover .about-image {
+  transform: scale(1.02);
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, #fff, #ccc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ddd;
+  margin-bottom: 1rem;
+}
+
+.technical-skills-section {
+  padding: 5rem 2rem;
+  background-color: #000;
+}
+
+.technical-skills-section .container {
+  max-width: 1100px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.skill-card {
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(100, 100, 150, 0.05) 100%
+  );
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(100, 100, 150, 0.08) 100%
+  );
+  transform: translateY(-4px);
+}
+
+.skill-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-list li {
+  margin-bottom: 1.2rem;
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #ccc;
+}
+
+.skill-list li:before {
+  content: \"▸\";
+  position: absolute;
+  left: 0;
+  color: #888;
+}
+
+.skill-list li:last-child {
+ margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+ .section-title {
+ font-size: 2rem;
+ }
+
+ .about-container {
+ grid-template-columns: 1fr;
+ gap: 2rem;
+ }
+
+ .skills-grid {
+ grid-template-columns: 1fr;
+ }
+
+ .about-section,
+ .technical-skills-section {
+ padding: 3rem 1.5rem;
+ }
+}

@@ -1,0 +1,230 @@
+/* ─── Project Section ──────────────────────────────────────────────────────── */
+.project-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* ─── Static Background Image ─────────────────────────────────────────────── */
+.project-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* parallax */
+  transition: opacity 0.8s ease-in-out;
+  z-index: 1;
+}
+
+.project-bg.fade-out {
+  opacity: 0;
+}
+
+/* ─── CLS Prevention Placeholder (Req 5) ──────────────────────────────────── */
+/*
+ * Occupies the exact same absolute footprint as the <video> element.
+ * When the JS chunk + first video frames have loaded (videoReady=true)
+ * this element is hidden. Until then it keeps the layout stable so the
+ * page doesn't jump (CLS = 0).
+ */
+.video-placeholder {
+  position: absolute;
+  inset: 0;
+  background-color: #000;
+  z-index: 0; /* behind the static bg image */
+  transition: opacity 0.5s ease;
+}
+
+.video-placeholder--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ─── Background Video (lazy-mounted) ─────────────────────────────────────── */
+.project-video-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  outline: none;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  z-index: 2; /* above placeholder and bg image once faded in */
+}
+
+.project-video-bg.fade-in {
+  opacity: 1;
+}
+
+/* ─── Top-Right Video Controls (mute toggle inside VideoBackground) ─────────── */
+.video-controls-top {
+  position: absolute;
+  top: 100px; /* clear the navbar */
+  right: 2rem;
+  display: flex;
+  gap: 1rem;
+  z-index: 100;
+}
+
+.control-btn {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition-fast);
+  cursor: pointer;
+}
+
+.control-btn:hover {
+  background: white;
+  color: black;
+  border-color: white;
+}
+
+/* ─── Gradient Overlay ────────────────────────────────────────────────────── */
+.project-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.6) 40%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ─── Text Content ────────────────────────────────────────────────────────── */
+.project-content {
+  position: relative;
+  z-index: 4;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 5rem;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  max-width: 620px;
+}
+
+.project-title-large {
+  font-size: 4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.05;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+.project-logo {
+  display: block;
+  max-height: 90px;       /* tall enough to read, compact enough to not dominate */
+  max-width: 280px;
+  width: auto;
+  object-fit: contain;
+  object-position: left center;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.7));
+  animation: logoFadeUp 0.6s ease both;
+}
+
+.project-logo-main {
+  display: block;
+  max-height: 200px;      /* large, prominent logo */
+  max-width: 600px;
+  width: auto;
+  object-fit: contain;
+  object-position: left center;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.8));
+  animation: logoFadeUp 0.6s ease both;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes logoFadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.project-category {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-accent, #f7a800);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.3rem;
+}
+
+.project-description {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #e0e0e0;
+  margin-bottom: 1.5rem;
+}
+
+.project-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.platform-info-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ccc;
+}
+
+.platform-tag {
+  color: white;
+}
+
+.platform-divider {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.engine-tag {
+  color: var(--color-text-muted);
+}
+
+/* ─── Wide Layout (≥1024px): two-column info row ─────────────────────────── */
+@media (min-width: 1024px) {
+  .project-info {
+    flex-direction: row;
+    align-items: flex-end;
+    max-width: 1200px;
+    gap: 4rem;
+  }
+
+  .project-title-large {
+    flex: 1.2;
+  }
+
+  .project-details {
+    flex: 1;
+    padding-bottom: 1rem;
+  }
+}
