@@ -66,6 +66,8 @@
 .project-section {
   margin-bottom: 80px;
   width: 100%;
+  min-height: auto;
+  height: auto;
 }
 
 .project-section:last-child {
@@ -88,6 +90,9 @@
   width: 100%;
   overflow: visible;
   align-items: stretch;
+  min-height: auto;
+  height: auto;
+  max-height: none;
 }
 
 .section-content p {
