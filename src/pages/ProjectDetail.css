@@ -87,6 +87,7 @@
   gap: 1.5rem;
   width: 100%;
   overflow: visible;
+  align-items: stretch;
 }
 
 .section-content p {
@@ -104,11 +105,14 @@
 .project-image-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 2rem 0;
   border-radius: 12px;
-  overflow: hidden;
+  overflow: visible;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background-color: var(--color-bg-secondary);
+  width: 100%;
+  flex-shrink: 0;
 }
 
 .project-detail-image {
