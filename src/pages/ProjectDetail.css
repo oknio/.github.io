@@ -63,14 +63,14 @@
 }
 
 /* ─── Sections ────────────────────────────────────────────────────────────────── */
-.project-section {
+.project-detail-page .project-section {
   margin-bottom: 80px;
   width: 100%;
   min-height: auto;
   height: auto;
 }
 
-.project-section:last-child {
+.project-detail-page .project-section:last-child {
   margin-bottom: 0;
 }
 
@@ -239,7 +239,7 @@
     padding: 60px 1.5rem;
   }
 
-  .project-section {
+  .project-detail-page .project-section {
     margin-bottom: 60px;
   }
 
@@ -288,7 +288,7 @@
     padding: 40px 1rem;
   }
 
-  .project-section {
+  .project-detail-page .project-section {
     margin-bottom: 40px;
   }
 
