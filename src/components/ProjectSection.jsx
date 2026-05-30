@@ -13,6 +13,7 @@
  */
 import React, { lazy, Suspense, useState, useCallback } from 'react';
 import { Play } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import './ProjectSection.css';
 import useVideoAutoplay from '../hooks/useVideoAutoplay';
 
@@ -104,7 +105,9 @@ const ProjectSection = ({ project, autoPlayOnMount = false }) => {
                   {project.actionText || 'Watch Trailer'}
                 </button>
               )}
-              <button className="btn-outline">Learn More</button>
+              <Link to={project.learnMoreUrl || '/projects'} className="btn-outline">
+                Learn More
+              </Link>
             </div>
 
             <div className="platform-info-row">

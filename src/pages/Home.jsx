@@ -15,6 +15,7 @@ const Home = () => {
       youtubeUrl: 'https://www.youtube.com/watch?v=LsI0kSezSKU',
       engine: 'Unreal Engine',
       actionText: 'Watch Trailer',
+      learnMoreUrl: '/projects',
     },
     {
       id: 'eyes-wide-shut',
@@ -27,6 +28,7 @@ const Home = () => {
       youtubeUrl: 'https://youtu.be/Yydb7n-ySyo',
       engine: 'Unity',
       actionText: 'Watch Gameplay',
+      learnMoreUrl: '/projects/EWS',
     },
     {
       id: 'donkey-kong',
@@ -39,7 +41,9 @@ const Home = () => {
       youtubeUrl: 'https://youtu.be/3DCLO-qkoKE',
       engine: 'C++',
       actionText: 'Watch Gameplay',
+      learnMoreUrl: '/projects',
     },
+
   ];
 
   return (
