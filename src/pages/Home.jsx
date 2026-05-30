@@ -15,7 +15,7 @@ const Home = () => {
       youtubeUrl: 'https://www.youtube.com/watch?v=LsI0kSezSKU',
       engine: 'Unreal Engine',
       actionText: 'Watch Trailer',
-      learnMoreUrl: '/projects',
+      learnMoreUrl: '/projects/delivery-dash',
     },
     {
       id: 'eyes-wide-shut',

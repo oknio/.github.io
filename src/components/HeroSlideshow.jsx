@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './HeroSlideshow.css';
 import { Play } from 'lucide-react';
 
@@ -9,6 +10,7 @@ const slides = [
     title: 'Delivery Dash',
     subtitle: 'Featured Project',
     actionText: 'Watch Trailer',
+    learnMoreUrl: '/projects/delivery-dash',
   },
   {
     id: 'eyes-wide-shut',
@@ -16,6 +18,7 @@ const slides = [
     title: 'Eyes Wide Shut',
     subtitle: 'AI Research Project',
     actionText: 'Watch Gameplay',
+    learnMoreUrl: '/projects/EWS',
   },
   {
     id: 'donkey-kong',
@@ -23,6 +26,7 @@ const slides = [
     title: 'Donkey Kong: SFML',
     subtitle: 'Retro C++ Engine',
     actionText: 'Watch Gameplay',
+    learnMoreUrl: '/projects/donkey-kong',
   }
 ];
 
@@ -69,12 +73,12 @@ const HeroSlideshow = () => {
               >
                 <Play fill="currentColor" size={20} /> {slide.actionText}
               </button>
-              <button 
+              <Link 
+                to={slide.learnMoreUrl}
                 className="btn-outline"
-                onClick={() => handleActionClick(slide.id)}
               >
                 Learn More
-              </button>
+              </Link>
             </div>
           </div>
         </div>

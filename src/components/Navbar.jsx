@@ -102,9 +102,15 @@ const Navbar = () => {
         </ul>
 
         <div className="navbar-actions">
-          <Link to="/contact" className="icon-btn user-btn" aria-label="Contact">
+          <a 
+            href="https://www.linkedin.com/in/henniosilvadev/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="icon-btn user-btn" 
+            aria-label="LinkedIn Profile"
+          >
             <User size={20} />
-          </Link>
+          </a>
         </div>
       </div>
     </nav>

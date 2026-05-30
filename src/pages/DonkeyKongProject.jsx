@@ -57,8 +57,8 @@ if (m_owner->jumpMode == JumpMode::Modern) {
 
             <div className="project-image-container">
               <img
-                src="/images/donkey_kong.png"
-                alt="Donkey Kong Gameplay Screenshot"
+                src="/files/docs/donkey-kong/Trajectory%20Comparison.svg"
+                alt="Retro vs Modern Jump Trajectory Comparison"
                 className="project-detail-image"
               />
             </div>
