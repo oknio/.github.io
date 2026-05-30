@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download, ExternalLink } from 'lucide-react';
+import { Download } from 'lucide-react';
 import CodeSnippet from '../components/CodeSnippet';
 import './ProjectDetail.css';
 
@@ -95,80 +95,66 @@ void Update()
       {/* Main Content */}
       <div className="project-detail-content container">
         
-        {/* Overview Section */}
+        {/* Overview Section - Embedded Content */}
         <section className="project-section">
-          <h2 className="section-title">Project Overview</h2>
           <div className="section-content">
             <p>
               <strong>"Eyes Wide Shut"</strong> is an adaptive stealth AI project designed to break the deterministic "exploitation loops" inherent in traditional Finite State Machines (FSMs). Rather than relying on predictable patrol routes or static search timers, the AI actively learns from player evasion tactics in real-time, forcing players to constantly evolve their gameplay.
             </p>
+
+            <div className="project-image-container">
+              <img
+                src="/files/docs/ews/EnemyControllerArchitectureOverview.png"
+                alt="Enemy Controller Architecture Overview"
+                className="project-detail-image"
+              />
+            </div>
             
             <p>
               At the core of the project is a custom hybrid architecture merging a decoupled Object-Oriented FSM with a Case-Based Reasoning (CBR) memory buffer. When the AI loses visual contact with the player, it stamps environmental data, such as coordinates and light levels, into a lightweight memory struct. During subsequent encounters, the AI queries this localised memory bank to autonomously find and trigger environmental counter-measures (like turning on lights), achieving "one-shot learning" without the massive performance overhead of Neural Networks.
             </p>
+
+            <CodeSnippet
+              title='The "One-Shot" Adaptation Algorithm (CBR Retrieval)'
+              code={codeSnippet1}
+              language="csharp"
+            />
             
             <p>
               To ensure the AI's adaptations felt earned rather than scripted, I engineered a physics-based analogue sensory model governed by the Inverse Square Law. The entire system was validated using a custom Event-Driven telemetry pipeline, which batched and serialized performance data to CSVs in the background, ensuring a highly optimized, scalable architecture.
             </p>
-          </div>
-        </section>
 
-        {/* Architecture Image */}
-        <section className="project-section">
-          <h2 className="section-title">Architecture Overview</h2>
-          <div className="project-image-container">
-            <img
-              src="/files/docs/ews/EnemyControllerArchitectureOverview.png"
-              alt="Enemy Controller Architecture Overview"
-              className="project-detail-image"
-            />
-          </div>
-        </section>
-
-        {/* Code Snippets */}
-        <section className="project-section">
-          <h2 className="section-title">Code Snippets</h2>
-          
-          <div className="snippet-container">
             <CodeSnippet
-              title='Snippet 1: The "One-Shot" Adaptation Algorithm (CBR Retrieval)'
-              code={codeSnippet1}
-              language="csharp"
-            />
-            <p className="snippet-description">
-              This snippet showcases the "Aha!" moment where the AI filters its memory bank using a reflection delay, then dynamically targets environmental affordances using physics overlaps.
-            </p>
-          </div>
-
-          <div className="snippet-container">
-            <CodeSnippet
-              title="Snippet 2: Event-Driven Telemetry (Decoupled Data Logging)"
+              title="Event-Driven Telemetry (Decoupled Data Logging)"
               code={codeSnippet2}
               language="csharp"
             />
-            <p className="snippet-description">
-              This highlights the ability to write performance-safe, production-ready backend systems using the Event Bus pattern and asynchronous batching.
-            </p>
           </div>
         </section>
 
         {/* Documentation Section */}
         <section className="project-section">
-          <h2 className="section-title">Documentation</h2>
-          <div className="documentation-links">
-            <a
-              href="/files/docs/ews/Dissertation.pdf"
-              className="doc-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Download size={20} />
-              <div className="doc-link-content">
-                <span className="doc-link-title">Full Dissertation</span>
-                <span className="doc-link-subtitle">PDF - Comprehensive project documentation</span>
-              </div>
-              <ExternalLink size={18} />
-            </a>
+          <h2 className="section-title">Full Dissertation</h2>
+          
+          <div className="pdf-viewer-container">
+            <div className="pdf-controls">
+              <a
+                href="/files/docs/ews/Dissertation.pdf"
+                className="pdf-download-btn"
+                download
+              >
+                <Download size={20} />
+                Download PDF
+              </a>
+            </div>
+            
+            <div className="pdf-preview">
+              <iframe
+                src="/files/docs/ews/Dissertation.pdf#toolbar=0"
+                title="Eyes Wide Shut Dissertation"
+                className="pdf-iframe"
+              />
+            </div>
           </div>
         </section>
 
