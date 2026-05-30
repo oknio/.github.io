@@ -97,6 +97,7 @@ void Update()
         
         {/* Overview Section - Embedded Content */}
         <section className="project-section">
+          <h2 className="section-title">Project Overview</h2>
           <div className="section-content">
             <p>
               <strong>"Eyes Wide Shut"</strong> is an adaptive stealth AI project designed to break the deterministic "exploitation loops" inherent in traditional Finite State Machines (FSMs). Rather than relying on predictable patrol routes or static search timers, the AI actively learns from player evasion tactics in real-time, forcing players to constantly evolve their gameplay.

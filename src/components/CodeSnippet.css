@@ -7,6 +7,7 @@
   overflow: hidden;
   margin: 2rem 0;
   transition: border-color var(--transition-fast);
+  width: 100%;
 }
 
 .code-snippet-widget:hover {
@@ -18,6 +19,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
   padding: 1.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   background: linear-gradient(135deg, rgba(247, 168, 0, 0.05) 0%, rgba(247, 168, 0, 0) 100%);
@@ -63,6 +66,8 @@
   background-color: rgba(0, 0, 0, 0.3);
   max-height: 400px;
   overflow-y: auto;
+  display: block;
+  width: 100%;
 }
 
 .code-snippet-code {
@@ -71,9 +76,9 @@
   line-height: 1.6;
   color: #e8e8e8;
   display: block;
-  white-space: pre;
-  word-break: normal;
-  word-wrap: normal;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /* ─── Syntax Highlighting (basic) ──────────────────────────────────────────── */
