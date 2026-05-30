@@ -77,7 +77,7 @@ const Navbar = () => {
               <div className="mega-menu-content">
                 <div className="mega-menu-header">
                   <h3>Featured Projects</h3>
-                  <Link to="/" onClick={() => setIsDropdownOpen(false)} className="view-all">View All <ArrowRight size={16} /></Link>
+                  <Link to="/projects" onClick={() => setIsDropdownOpen(false)} className="view-all">View All <ArrowRight size={16} /></Link>
                 </div>
                 <div className="mega-menu-grid">
                   {featuredProjects.map(project => (
