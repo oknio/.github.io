@@ -5,6 +5,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Projects from './pages/Projects';
 import EWSProject from './pages/EWSProject';
+import DonkeyKongProject from './pages/DonkeyKongProject';
 import './App.css'; // Just in case, but we might delete it
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/EWS" element={<EWSProject />} />
+        <Route path="/projects/donkey-kong" element={<DonkeyKongProject />} />
       </Routes>
     </Router>
   );

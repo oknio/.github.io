@@ -41,7 +41,7 @@ const Home = () => {
       youtubeUrl: 'https://youtu.be/3DCLO-qkoKE',
       engine: 'C++',
       actionText: 'Watch Gameplay',
-      learnMoreUrl: '/projects',
+      learnMoreUrl: '/projects/donkey-kong',
     },
 
   ];
